@@ -1,0 +1,56 @@
+.about {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../media/images/mandalorian-wallpaper.jpeg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  z-index: -3;
+  opacity: 0;
+  -webkit-animation: appear 1s forwards;
+          animation: appear 1s forwards;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.about-message {
+  margin: 20rem;
+  height: 50vh;
+  overflow: hidden;
+  color: gold;
+  width: 30rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.about-message p {
+  text-align: justify;
+}
+
+.message {
+  transform: translateY(35rem);
+  -webkit-animation: roll-up 100s linear forwards;
+          animation: roll-up 100s linear forwards;
+}
+
+@-webkit-keyframes roll-up {
+  100% {
+    transform: translateY(-55.5rem);
+  }
+}
+
+@keyframes roll-up {
+  100% {
+    transform: translateY(-55.5rem);
+  }
+}
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=About.module.css.map */

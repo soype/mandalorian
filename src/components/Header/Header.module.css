@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem 0;
+  overflow-x: hidden;
+  height: 5rem;
+  background-image: linear-gradient(to bottom, rgba(128, 128, 128, 0.7), rgba(128, 128, 128, 0));
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translateX(16rem);
+  margin-left: 1rem;
+  opacity: 0;
+}
+
+.menu-active {
+  transform: translateX(0rem);
+  opacity: 1;
+}
+
+.menu-item {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+.menu-item:hover {
+  color: rgb(149, 20, 20);
+}
+
+.burger {
+  transform: translateX(14rem);
+  height: 1.2rem;
+  width: 2rem;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  top: -0.3rem;
+  transition: transform 0.5s;
+}
+.burger .line-1 {
+  transform: rotate(-45deg) translate(-0.2rem, -0.1rem);
+  width: 1.67rem;
+}
+.burger .line-3 {
+  transform: rotate(45deg) translate(-0.2rem, 0.1rem);
+  width: 1.67rem;
+}
+
+.burger-clicked {
+  transform: translateX(0rem);
+}
+.burger-clicked .line-1 {
+  transform: rotate(45deg) translateX(0.5rem) translateY(-0.33rem);
+  width: 1.67rem;
+}
+.burger-clicked .line-3 {
+  transform: rotate(-45deg) translateX(0.5rem) translateY(0.33rem);
+  width: 1.67rem;
+}
+
+.line {
+  position: absolute;
+  height: 0.6rem;
+  background-color: black;
+  width: 2rem;
+  transition: transform 0.5s, width 0.5s;
+}
+
+.line-1 {
+  top: 0;
+}
+
+.line-2 {
+  top: 50%;
+}
+
+.line-3 {
+  top: 100%;
+}/*# sourceMappingURL=Header.module.css.map */

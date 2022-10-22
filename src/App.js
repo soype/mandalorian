@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Market from './components/Market/Market';
+import About from './components/About/About';
+
 function App() {
+
+  const [selector, setSelector] = useState('1');
+
+  const menuSelectorHandler = (id) => {
+    setSelector(id);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header onChangeSelector={menuSelectorHandler}></Header>
+      {(selector === '1') && <Home></Home>}
+      {(selector === '2') && <Market></Market>}
+      {(selector === '3') && <About></About>}
     </div>
   );
 }

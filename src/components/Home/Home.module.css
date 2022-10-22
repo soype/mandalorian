@@ -1,0 +1,50 @@
+.home {
+  opacity: 0;
+  -webkit-animation: appear 1s forwards;
+          animation: appear 1s forwards;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -3;
+  background-image: url("../../media/images/wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message {
+  margin: 3rem;
+  text-align: left;
+  color: rgb(149, 20, 20);
+}
+
+.mandalorian-message {
+  font-family: "Mandalorian";
+  width: 6rem;
+  text-align: left;
+  color: rgb(149, 20, 20);
+  margin: 3rem;
+  cursor: default;
+}
+.mandalorian-message span {
+  width: 0.1rem;
+  transition: all 0.3s;
+}
+.mandalorian-message span:hover {
+  text-shadow: 1px 1px 5px red;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=Home.module.css.map */
