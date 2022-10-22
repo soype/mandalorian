@@ -28,20 +28,20 @@
 }
 
 .message {
-  transform: translateY(35rem);
+  transform: translateY(35vh);
   -webkit-animation: roll-up 100s linear forwards;
           animation: roll-up 100s linear forwards;
 }
 
 @-webkit-keyframes roll-up {
   100% {
-    transform: translateY(-55.5rem);
+    transform: translateY(-200vh);
   }
 }
 
 @keyframes roll-up {
   100% {
-    transform: translateY(-55.5rem);
+    transform: translateY(-200vh);
   }
 }
 @-webkit-keyframes appear {

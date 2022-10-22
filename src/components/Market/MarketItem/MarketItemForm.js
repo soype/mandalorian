@@ -9,15 +9,15 @@ const MarketItemForm = (props) => {
     }
 
     const resetHandler = e => {
-        props.onReset(e.currentTarget.parentElement.id[5])
+        props.onReset(+ e.currentTarget.parentElement.id[5])
     }
 
     const removeHandler = e => {
-        props.onRemove(e.currentTarget.parentElement.id[5])
+        props.onRemove(+ e.currentTarget.parentElement.id[5])
     }
 
     const addHandler = e => {
-        props.onAdd(e.currentTarget.parentElement.id[5])
+        props.onAdd(+ e.currentTarget.parentElement.id[5])
     }
 
   return (

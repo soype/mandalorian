@@ -41,11 +41,18 @@ const Market = () => {
 
   const resetHandler = id => {
     const newArray = items.map(item => {
-      if(item.id == id){
+      if(item.id === id){
         return {...item, amount: 0};
       }else{
         return item;
       }
+    })
+    setItems(newArray)
+  }
+
+  const resetAllHandler = () => {
+    const newArray = items.map(item =>{
+      return {...item, amount: 0};
     })
     setItems(newArray)
   }
@@ -55,7 +62,7 @@ const Market = () => {
     let newAmount = oldAmount - 1;
     if(oldAmount >= 1){
       const newArray = items.map(item => {
-        if(item.id == id){
+        if(item.id === id){
           return {...item, amount: newAmount};
         }else{
           return item;
@@ -70,7 +77,7 @@ const Market = () => {
     const oldAmount = items[id-1].amount;
     const newAmount = oldAmount + 1;
     const newArray = items.map(item => {
-      if(item.id == id){
+      if(item.id === id){
         return {...item, amount: newAmount};
       }else{
         return item;
@@ -92,7 +99,7 @@ const Market = () => {
           )
         })}
       </div>
-      <MarketForm items={items}></MarketForm>
+      <MarketForm resetAll={resetAllHandler} items={items}></MarketForm>
     </div>
   )
 }

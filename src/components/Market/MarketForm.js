@@ -9,9 +9,9 @@ const MarketForm = (props) => {
 
     useEffect(() => {
         let amount = 0;
-        props.items.map(item => {
+        props.items.forEach(item => {
             amount += item.amount * item.price;
-        })
+        });
         let newAmount = Math.round(amount * 100) / 100;
         setTotalAmount(newAmount);
     }, [props.items])
@@ -19,7 +19,9 @@ const MarketForm = (props) => {
 
     const submitHandler = e => {
         e.preventDefault();
+        props.resetAll()
     }
+
   return (
     <div className={classes['market-form-wrapper']}>
         <div className={classes['market-form-container']}>

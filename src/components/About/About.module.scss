@@ -27,7 +27,7 @@
 }
 
 .message{
-    transform: translateY(35rem);
+    transform: translateY(35vh);
     animation: roll-up 100s linear forwards;
 }
 
@@ -35,7 +35,7 @@
 @keyframes roll-up {
     0%{}
     100%{
-        transform: translateY(-55.5rem);
+        transform: translateY(-200vh);
     }
 }
 
