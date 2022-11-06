@@ -9,7 +9,7 @@ import About from './components/About/About';
 
 function App() {
 
-  const [selector, setSelector] = useState('1');
+  const [selector, setSelector] = useState('2');
 
   const menuSelectorHandler = (id) => {
     setSelector(id);
