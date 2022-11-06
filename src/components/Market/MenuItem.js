@@ -9,7 +9,7 @@ const MenuItem = (props) => {
     }
     
     return (
-        <h2 className={classes[props.itemStyle]} onClick={selectorHandler}>{props.params[0]}</h2>
+        <h2 className={classes[props.itemStyle]} onClick={selectorHandler}>{props.params.name}</h2>
     )
 }
 

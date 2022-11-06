@@ -32,7 +32,7 @@
 }
 
 .options {
-  margin-top: 4rem;
+  margin-top: 25%;
 }
 
 .menu-item {
@@ -52,12 +52,9 @@
   cursor: pointer;
   transition: all 0.5s;
 }
-.menu-item-selected:hover {
-  color: rgb(149, 20, 20);
-}
 
 .cart {
-  margin-top: 4rem;
+  margin-top: 25%;
 }
 
 .display {
