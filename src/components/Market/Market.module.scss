@@ -59,6 +59,18 @@
 .display{
     width: 65%;
     margin: 4rem 0 4rem;
+    position: relative;
+}
+
+.total{
+    position: absolute;
+    background-color: rgb(88, 86, 86);
+    height: 6rem;
+    width: 20rem;
+    color: red;
+    left: 50%;
+    bottom: -1rem;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes appear {

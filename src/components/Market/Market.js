@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 import classes from "./Market.module.css";
 
@@ -13,10 +13,10 @@ import Helmet from "../../media/images/misc/helmet.png";
 import Jetpack from "../../media/images/misc/jetpack.png";
 import MenuItem from "./MenuItem";
 import Display from "./Display/Display";
-import Cart from "./Cart";
 
 const Market = (props) => {
   const [selected, setSelected] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const [weapons, setWeapons] = useState([
         {
@@ -92,13 +92,8 @@ const Market = (props) => {
     },
   ])
 
-  const cart = {
-    items: "",
-    totalAmount: 0,
-    totalItems: 0,
-  };
-
-  const categories = [
+  const categories = useMemo(() => {
+    return[
     {
       name: 'Weapons',
       data: weapons
@@ -111,8 +106,18 @@ const Market = (props) => {
       name:'Misc',
       data: misc
     }
-  ]
+  ]}, [weapons, ships, misc])
 
+  useEffect(() => {
+    let amount = 0;
+    for(let i=0; i < 3; i++){
+      for(let x=0; x < 3; x++){
+        amount += categories[i].data[x].amount * categories[i].data[x].price;
+      }
+    }
+    setTotalAmount(amount);
+  }, [categories])
+  
   const selectorHandler = (id) => {
     setSelected(id);
   };
@@ -209,7 +214,9 @@ const Market = (props) => {
         {selected === 1 && <Display data={weapons} onAdd={addHandler} onSubstract={substractHandler}></Display>}
         {selected === 2 && <Display data={ships} onAdd={addHandler} onSubstract={substractHandler}></Display>}
         {selected === 3 && <Display data={misc} onAdd={addHandler} onSubstract={substractHandler}></Display>}
-        {selected === 4 && <Cart data={cart}></Cart>}
+        <div className={classes.total}>
+            {totalAmount}
+        </div>
       </div>
     </div>
   );
